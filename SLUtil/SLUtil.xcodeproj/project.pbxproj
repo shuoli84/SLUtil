@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C7B01D117C835B7001548BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7B01D017C835B7001548BD /* UIKit.framework */; };
+		9C7B01D317C835B7001548BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7B01D217C835B7001548BD /* Foundation.framework */; };
+		9C7B01D517C835B7001548BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7B01D417C835B7001548BD /* CoreGraphics.framework */; };
+		9C7B01DB17C835B7001548BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B01D917C835B7001548BD /* InfoPlist.strings */; };
+		9C7B01DD17C835B7001548BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B01DC17C835B7001548BD /* main.m */; };
+		9C7B01E117C835B7001548BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B01E017C835B7001548BD /* AppDelegate.m */; };
+		9C7B01E317C835B7001548BD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B01E217C835B7001548BD /* Default.png */; };
+		9C7B01E517C835B7001548BD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B01E417C835B7001548BD /* Default@2x.png */; };
+		9C7B01E717C835B7001548BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B01E617C835B7001548BD /* Default-568h@2x.png */; };
+		9C7B01EA17C835B7001548BD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B01E817C835B7001548BD /* MainStoryboard_iPhone.storyboard */; };
+		9C7B01ED17C835B7001548BD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B01EB17C835B7001548BD /* MainStoryboard_iPad.storyboard */; };
+		9C7B01F017C835B7001548BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B01EF17C835B7001548BD /* ViewController.m */; };
+		9C7B01F817C835B7001548BD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7B01F717C835B7001548BD /* SenTestingKit.framework */; };
+		9C7B01F917C835B7001548BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7B01D017C835B7001548BD /* UIKit.framework */; };
+		9C7B01FA17C835B7001548BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7B01D217C835B7001548BD /* Foundation.framework */; };
+		9C7B020217C835B7001548BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B020017C835B7001548BD /* InfoPlist.strings */; };
+		9C7B020517C835B8001548BD /* SLUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B020417C835B8001548BD /* SLUtilTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C7B01FB17C835B7001548BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C7B01C517C835B7001548BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C7B01CC17C835B7001548BD;
+			remoteInfo = SLUtil;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C7B01CD17C835B7001548BD /* SLUtil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLUtil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C7B01D017C835B7001548BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C7B01D217C835B7001548BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9C7B01D417C835B7001548BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9C7B01D817C835B7001548BD /* SLUtil-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SLUtil-Info.plist"; sourceTree = "<group>"; };
+		9C7B01DA17C835B7001548BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C7B01DC17C835B7001548BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C7B01DE17C835B7001548BD /* SLUtil-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SLUtil-Prefix.pch"; sourceTree = "<group>"; };
+		9C7B01DF17C835B7001548BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C7B01E017C835B7001548BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C7B01E217C835B7001548BD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9C7B01E417C835B7001548BD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9C7B01E617C835B7001548BD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9C7B01E917C835B7001548BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		9C7B01EC17C835B7001548BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		9C7B01EE17C835B7001548BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9C7B01EF17C835B7001548BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C7B01F617C835B7001548BD /* SLUtilTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLUtilTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C7B01F717C835B7001548BD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9C7B01FF17C835B7001548BD /* SLUtilTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SLUtilTests-Info.plist"; sourceTree = "<group>"; };
+		9C7B020117C835B7001548BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C7B020317C835B8001548BD /* SLUtilTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLUtilTests.h; sourceTree = "<group>"; };
+		9C7B020417C835B8001548BD /* SLUtilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLUtilTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C7B01CA17C835B7001548BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C7B01D117C835B7001548BD /* UIKit.framework in Frameworks */,
+				9C7B01D317C835B7001548BD /* Foundation.framework in Frameworks */,
+				9C7B01D517C835B7001548BD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C7B01F217C835B7001548BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C7B01F817C835B7001548BD /* SenTestingKit.framework in Frameworks */,
+				9C7B01F917C835B7001548BD /* UIKit.framework in Frameworks */,
+				9C7B01FA17C835B7001548BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C7B01C417C835B7001548BD = {
+			isa = PBXGroup;
+			children = (
+				9C7B01D617C835B7001548BD /* SLUtil */,
+				9C7B01FD17C835B7001548BD /* SLUtilTests */,
+				9C7B01CF17C835B7001548BD /* Frameworks */,
+				9C7B01CE17C835B7001548BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C7B01CE17C835B7001548BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B01CD17C835B7001548BD /* SLUtil.app */,
+				9C7B01F617C835B7001548BD /* SLUtilTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C7B01CF17C835B7001548BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B01D017C835B7001548BD /* UIKit.framework */,
+				9C7B01D217C835B7001548BD /* Foundation.framework */,
+				9C7B01D417C835B7001548BD /* CoreGraphics.framework */,
+				9C7B01F717C835B7001548BD /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C7B01D617C835B7001548BD /* SLUtil */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B01DF17C835B7001548BD /* AppDelegate.h */,
+				9C7B01E017C835B7001548BD /* AppDelegate.m */,
+				9C7B01E817C835B7001548BD /* MainStoryboard_iPhone.storyboard */,
+				9C7B01EB17C835B7001548BD /* MainStoryboard_iPad.storyboard */,
+				9C7B01EE17C835B7001548BD /* ViewController.h */,
+				9C7B01EF17C835B7001548BD /* ViewController.m */,
+				9C7B01D717C835B7001548BD /* Supporting Files */,
+			);
+			path = SLUtil;
+			sourceTree = "<group>";
+		};
+		9C7B01D717C835B7001548BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B01D817C835B7001548BD /* SLUtil-Info.plist */,
+				9C7B01D917C835B7001548BD /* InfoPlist.strings */,
+				9C7B01DC17C835B7001548BD /* main.m */,
+				9C7B01DE17C835B7001548BD /* SLUtil-Prefix.pch */,
+				9C7B01E217C835B7001548BD /* Default.png */,
+				9C7B01E417C835B7001548BD /* Default@2x.png */,
+				9C7B01E617C835B7001548BD /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C7B01FD17C835B7001548BD /* SLUtilTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B020317C835B8001548BD /* SLUtilTests.h */,
+				9C7B020417C835B8001548BD /* SLUtilTests.m */,
+				9C7B01FE17C835B7001548BD /* Supporting Files */,
+			);
+			path = SLUtilTests;
+			sourceTree = "<group>";
+		};
+		9C7B01FE17C835B7001548BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B01FF17C835B7001548BD /* SLUtilTests-Info.plist */,
+				9C7B020017C835B7001548BD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C7B01CC17C835B7001548BD /* SLUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C7B020817C835B8001548BD /* Build configuration list for PBXNativeTarget "SLUtil" */;
+			buildPhases = (
+				9C7B01C917C835B7001548BD /* Sources */,
+				9C7B01CA17C835B7001548BD /* Frameworks */,
+				9C7B01CB17C835B7001548BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SLUtil;
+			productName = SLUtil;
+			productReference = 9C7B01CD17C835B7001548BD /* SLUtil.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C7B01F517C835B7001548BD /* SLUtilTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C7B020B17C835B8001548BD /* Build configuration list for PBXNativeTarget "SLUtilTests" */;
+			buildPhases = (
+				9C7B01F117C835B7001548BD /* Sources */,
+				9C7B01F217C835B7001548BD /* Frameworks */,
+				9C7B01F317C835B7001548BD /* Resources */,
+				9C7B01F417C835B7001548BD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C7B01FC17C835B7001548BD /* PBXTargetDependency */,
+			);
+			name = SLUtilTests;
+			productName = SLUtilTests;
+			productReference = 9C7B01F617C835B7001548BD /* SLUtilTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C7B01C517C835B7001548BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Li Shuo";
+			};
+			buildConfigurationList = 9C7B01C817C835B7001548BD /* Build configuration list for PBXProject "SLUtil" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9C7B01C417C835B7001548BD;
+			productRefGroup = 9C7B01CE17C835B7001548BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C7B01CC17C835B7001548BD /* SLUtil */,
+				9C7B01F517C835B7001548BD /* SLUtilTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C7B01CB17C835B7001548BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C7B01DB17C835B7001548BD /* InfoPlist.strings in Resources */,
+				9C7B01E317C835B7001548BD /* Default.png in Resources */,
+				9C7B01E517C835B7001548BD /* Default@2x.png in Resources */,
+				9C7B01E717C835B7001548BD /* Default-568h@2x.png in Resources */,
+				9C7B01EA17C835B7001548BD /* MainStoryboard_iPhone.storyboard in Resources */,
+				9C7B01ED17C835B7001548BD /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C7B01F317C835B7001548BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C7B020217C835B7001548BD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9C7B01F417C835B7001548BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C7B01C917C835B7001548BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C7B01DD17C835B7001548BD /* main.m in Sources */,
+				9C7B01E117C835B7001548BD /* AppDelegate.m in Sources */,
+				9C7B01F017C835B7001548BD /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C7B01F117C835B7001548BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C7B020517C835B8001548BD /* SLUtilTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C7B01FC17C835B7001548BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C7B01CC17C835B7001548BD /* SLUtil */;
+			targetProxy = 9C7B01FB17C835B7001548BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C7B01D917C835B7001548BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C7B01DA17C835B7001548BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9C7B01E817C835B7001548BD /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C7B01E917C835B7001548BD /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		9C7B01EB17C835B7001548BD /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C7B01EC17C835B7001548BD /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		9C7B020017C835B7001548BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C7B020117C835B7001548BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C7B020617C835B8001548BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C7B020717C835B8001548BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C7B020917C835B8001548BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SLUtil/SLUtil-Prefix.pch";
+				INFOPLIST_FILE = "SLUtil/SLUtil-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9C7B020A17C835B8001548BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SLUtil/SLUtil-Prefix.pch";
+				INFOPLIST_FILE = "SLUtil/SLUtil-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9C7B020C17C835B8001548BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SLUtil.app/SLUtil";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SLUtil/SLUtil-Prefix.pch";
+				INFOPLIST_FILE = "SLUtilTests/SLUtilTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9C7B020D17C835B8001548BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SLUtil.app/SLUtil";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SLUtil/SLUtil-Prefix.pch";
+				INFOPLIST_FILE = "SLUtilTests/SLUtilTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C7B01C817C835B7001548BD /* Build configuration list for PBXProject "SLUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C7B020617C835B8001548BD /* Debug */,
+				9C7B020717C835B8001548BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C7B020817C835B8001548BD /* Build configuration list for PBXNativeTarget "SLUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C7B020917C835B8001548BD /* Debug */,
+				9C7B020A17C835B8001548BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9C7B020B17C835B8001548BD /* Build configuration list for PBXNativeTarget "SLUtilTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C7B020C17C835B8001548BD /* Debug */,
+				9C7B020D17C835B8001548BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C7B01C517C835B7001548BD /* Project object */;
+}
