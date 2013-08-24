@@ -47,21 +47,32 @@
     [_object setValue:value forKey:_keyPath];
 }
 
--(void)attachToChannel:(ChangeChannel *)channel changeSendBlock:(ChangeBlock)changeSendBlock {
-    typeof(self) __weak weakSelf = self;
-    _observerIdentifier = [_object addObserverForKeyPath:_keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld task:^(id obj, NSDictionary *change) {
-        id oldValue = change[NSKeyValueChangeOldKey];
-        id newValue = change[NSKeyValueChangeNewKey];
-        if(weakSelf.converter){
-            oldValue = weakSelf.converter.o2cBlock(oldValue);
-            newValue = weakSelf.converter.o2cBlock(newValue);
-        }
-        changeSendBlock(newValue, oldValue);
-    }];
+-(void)attachToChannel:(ChangeChannel *)channel{
+    if(self.attachBlock){
+        self.attachBlock(self, channel);
+    }
+    else{
+        typeof(self) __weak weakSelf = self;
+        ChangeBlock changeBlock = [channel.changeSendBlock copy];
+        _observerIdentifier = [_object addObserverForKeyPath:_keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld task:^(id obj, NSDictionary *change) {
+            id oldValue = change[NSKeyValueChangeOldKey];
+            id newValue = change[NSKeyValueChangeNewKey];
+            if(weakSelf.converter){
+                oldValue = weakSelf.converter.o2cBlock(oldValue);
+                newValue = weakSelf.converter.o2cBlock(newValue);
+            }
+            changeBlock(newValue, oldValue);
+        }];
+    }
 }
 
 -(void)detach {
-    [_object removeObserversWithIdentifier:_observerIdentifier];
+    if(self.detachBlock){
+        self.detachBlock(self);
+    }
+    else{
+        [_object removeObserversWithIdentifier:_observerIdentifier];
+    }
 }
 @end
 
@@ -78,7 +89,7 @@
     self.block(newValue, oldValue);
 }
 
--(void)attachToChannel:(ChangeChannel *)channel changeSendBlock:(ChangeBlock)changeSendBlock {
+-(void)attachToChannel:(ChangeChannel *)channel{
     return;
 }
 
@@ -93,6 +104,10 @@
     self = [super init];
 
     if(self){
+        typeof(self) __weak weakSelf = self;
+        self.changeSendBlock = ^(id newValue, id oldValue){
+            [weakSelf setNewValue:newValue fromOldValue:oldValue];
+        };
         self.currentValue = value;
         self.changeItems = [NSMutableArray arrayWithCapacity:changeItems.count];
         for(id<ChangeItem> change in changeItems){
@@ -130,9 +145,7 @@
     // Apply the value change to make the value sync with current values
     [changeItem valueChangedTo:self.currentValue from:[NSNull null]];
     typeof(self) __weak weakSelf = self;
-    [changeItem attachToChannel:self changeSendBlock:^(id newValue, id oldValue) {
-        [weakSelf setNewValue:newValue fromOldValue:oldValue];
-    }];
+    [changeItem attachToChannel:self];
 }
 
 -(void)removeChangeItem:(id <ChangeItem>)changeItem {

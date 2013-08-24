@@ -26,7 +26,7 @@ typedef id (^ValueConvertBlock)(id value);
 /**
 * Change action block is the block when changes detected.
 */
--(void)attachToChannel:(ChangeChannel *)channel changeSendBlock:(ChangeBlock)changeSendBlock;
+-(void)attachToChannel:(ChangeChannel *)channel;
 -(void)detach;
 @end
 
@@ -35,9 +35,12 @@ typedef id (^ValueConvertBlock)(id value);
 @property (nonatomic, strong) NSString* keyPath;
 @property (nonatomic, strong) ValueConverter* converter;
 
+@property (nonatomic, copy) void (^attachBlock)(ObjectChangeItem*, ChangeChannel *);
+@property (nonatomic, copy) void (^detachBlock)(ObjectChangeItem*);
+
 -(id)initWithObject:(id)object keyPath:(NSString*)keyPath;
 -(void)valueChangedTo:(id)newValue from:(id)oldValue;
--(void)attachToChannel:(ChangeChannel *)channel changeSendBlock:(ChangeBlock)changeSendBlock;
+-(void)attachToChannel:(ChangeChannel *)channel;
 -(void)detach;
 @end
 
@@ -47,7 +50,7 @@ typedef id (^ValueConvertBlock)(id value);
 @property (nonatomic, strong) NSString* name;
 
 -(id)initWithBlock:(ChangeBlock)block;
--(void)attachToChannel:(ChangeChannel *)channel changeSendBlock:(ChangeBlock)changeSendBlock;
+-(void)attachToChannel:(ChangeChannel *)channel;
 -(void)detach;
 @end
 
@@ -57,6 +60,7 @@ typedef id (^ValueConvertBlock)(id value);
 
 @property (nonatomic, strong) id currentValue;
 @property (nonatomic, strong) NSMutableArray *changeItems;
+@property (nonatomic, copy) ChangeBlock changeSendBlock;
 -(id)initWithChangeItems:(NSArray*)changeItems value:(id)value;
 
 -(void)setNewValue:(id)newValue fromOldValue:(id)oldValue;
