@@ -148,6 +148,10 @@
     }
 }
 
+-(id<ChangeItem>)changeItemForIdentifier:(NSString*)identifier{
+    return self.changeItems[identifier];
+}
+
 -(NSString*)appendChangeItem:(id <ChangeItem>)changeItem {
     NSString *identifier = [[NSUUID UUID] UUIDString];
     [self appendChangeItem:changeItem identifier:identifier];

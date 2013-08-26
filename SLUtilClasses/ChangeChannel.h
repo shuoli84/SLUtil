@@ -66,6 +66,7 @@ typedef id (^ValueConvertBlock)(id value);
 
 -(void)setNewValue:(id)newValue fromOldValue:(id)oldValue source:(id)sourceObject;
 
+-(id<ChangeItem>)changeItemForIdentifier:(NSString*)identifier;
 -(NSString*)appendChangeItem:(id<ChangeItem>)changeItem;
 -(void)appendChangeItem:(id <ChangeItem>)changeItem identifier:(NSString*)name;
 -(void)removeChangeItemByIdentifier:(NSString*)identifier;
