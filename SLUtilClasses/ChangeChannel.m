@@ -100,6 +100,10 @@
 
 @implementation ChangeChannel
 
+-(id)init{
+    return [self initWithChangeItems:nil value:nil];
+}
+
 -(id)initWithChangeItems:(NSArray*)changeItems value:(id)value{
     self = [super init];
 
@@ -109,7 +113,7 @@
             [weakSelf setNewValue:newValue fromOldValue:oldValue source:obj];
         };
         self.currentValue = value;
-        self.changeItems = [NSMutableArray arrayWithCapacity:changeItems.count];
+        self.changeItems = [NSMutableDictionary dictionaryWithCapacity:changeItems.count];
         for(id<ChangeItem> change in changeItems){
             [self appendChangeItem:change];
         }
@@ -123,7 +127,7 @@
     NSMutableArray *objectAvailable = [NSMutableArray array];
     NSMutableArray *recursiveDefenses = [NSMutableArray array];
 
-    for(NSObject<ChangeItem> *change in self.changeItems){
+    for(NSObject<ChangeItem> *change in self.changeItems.allValues){
         static char functionKey;
         RecurseFense *recursiveDefense = [[RecurseFense alloc] initWithObject:change functionKey:&functionKey];
         if(recursiveDefense){
@@ -144,17 +148,44 @@
     }
 }
 
--(void)appendChangeItem:(id <ChangeItem>)changeItem {
-    [self.changeItems addObject:changeItem];
-    // Apply the value change to make the value sync with current values
+-(NSString*)appendChangeItem:(id <ChangeItem>)changeItem {
+    NSString *identifier = [[NSUUID UUID] UUIDString];
+    [self appendChangeItem:changeItem identifier:identifier];
+    return identifier;
+}
+
+-(void)appendChangeItem:(id <ChangeItem>)changeItem identifier:(NSString*)name{
+    if(self.changeItems[name]){
+        [self removeChangeItem:self.changeItems[name]];
+    }
+    [self.changeItems setObject:changeItem forKey:name];
+
     [changeItem valueChangedTo:self.currentValue from:[NSNull null]];
     [changeItem attachToChannel:self];
 }
 
+-(void)removeChangeItemByIdentifier:(NSString*)identifier {
+    if(self.changeItems[identifier]){
+        id<ChangeItem> change = self.changeItems[identifier];
+        [change detach];
+        [self.changeItems removeObjectForKey:identifier];
+    }
+}
+
 -(void)removeChangeItem:(id <ChangeItem>)changeItem {
-    if([self.changeItems containsObject:changeItem]){
-        [changeItem detach];
-        [self.changeItems removeObject:changeItem];
+    NSString* __block identifier;
+    [self.changeItems enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if([obj isEqual:changeItem]){
+            identifier = key;
+        }
+    }];
+
+    [self removeChangeItemByIdentifier:identifier];
+}
+
+-(void)dealloc {
+    for(id<ChangeItem> change in self.changeItems.allValues){
+        [change detach];
     }
 }
 @end

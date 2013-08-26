@@ -60,12 +60,14 @@ typedef id (^ValueConvertBlock)(id value);
 }
 
 @property (nonatomic, strong) id currentValue;
-@property (nonatomic, strong) NSMutableArray *changeItems;
+@property (nonatomic, strong) NSMutableDictionary *changeItems;
 @property (nonatomic, copy) ChangeWithSenderBlock changeSendBlock;
 -(id)initWithChangeItems:(NSArray*)changeItems value:(id)value;
 
 -(void)setNewValue:(id)newValue fromOldValue:(id)oldValue source:(id)sourceObject;
 
--(void)appendChangeItem:(id<ChangeItem>)changeItem;
--(void)removeChangeItem:(id<ChangeItem>)changeItem;
+-(NSString*)appendChangeItem:(id<ChangeItem>)changeItem;
+-(void)appendChangeItem:(id <ChangeItem>)changeItem identifier:(NSString*)name;
+-(void)removeChangeItemByIdentifier:(NSString*)identifier;
+-(void)removeChangeItem:(id <ChangeItem>)changeItem;
 @end
