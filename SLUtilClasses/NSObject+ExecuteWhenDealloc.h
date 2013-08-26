@@ -10,6 +10,7 @@
 
 @interface NSObject (ExecuteWhenDealloc)
 
++(void)executeWhenAnyDealloc:(NSArray*)objects block:(void(^)())block;
 +(void)executeWhenDealloc:(NSObject *)object block:(void(^)())block;
 
 @end

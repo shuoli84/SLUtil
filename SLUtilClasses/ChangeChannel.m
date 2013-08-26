@@ -53,7 +53,7 @@
     }
     else{
         typeof(self) __weak weakSelf = self;
-        ChangeBlock changeBlock = [channel.changeSendBlock copy];
+        ChangeWithSenderBlock changeBlock = [channel.changeSendBlock copy];
         _observerIdentifier = [_object addObserverForKeyPath:_keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld task:^(id obj, NSDictionary *change) {
             id oldValue = change[NSKeyValueChangeOldKey];
             id newValue = change[NSKeyValueChangeNewKey];
@@ -61,7 +61,7 @@
                 oldValue = weakSelf.converter.o2cBlock(oldValue);
                 newValue = weakSelf.converter.o2cBlock(newValue);
             }
-            changeBlock(newValue, oldValue);
+            changeBlock(newValue, oldValue, weakSelf);
         }];
     }
 }
@@ -105,8 +105,8 @@
 
     if(self){
         typeof(self) __weak weakSelf = self;
-        self.changeSendBlock = ^(id newValue, id oldValue){
-            [weakSelf setNewValue:newValue fromOldValue:oldValue];
+        self.changeSendBlock = ^(id newValue, id oldValue, id obj){
+            [weakSelf setNewValue:newValue fromOldValue:oldValue source:obj];
         };
         self.currentValue = value;
         self.changeItems = [NSMutableArray arrayWithCapacity:changeItems.count];
@@ -118,20 +118,24 @@
     return self;
 }
 
--(void)setNewValue:(id)newValue fromOldValue:(id)oldValue{
+-(void)setNewValue:(id)newValue fromOldValue:(id)oldValue source:(id)object{
     self.currentValue = newValue;
     NSMutableArray *objectAvailable = [NSMutableArray array];
     NSMutableArray *recursiveDefenses = [NSMutableArray array];
-    for(id<ChangeItem> change in self.changeItems){
+
+    for(NSObject<ChangeItem> *change in self.changeItems){
         static char functionKey;
         RecurseFense *recursiveDefense = [[RecurseFense alloc] initWithObject:change functionKey:&functionKey];
         if(recursiveDefense){
-            [objectAvailable addObject:change];
             [recursiveDefenses addObject:recursiveDefense];
+            if ([change isEqual:object]){
+                continue;
+            }
+            [objectAvailable addObject:change];
         }
     }
 
-    for(id<ChangeItem> change in objectAvailable){
+    for(NSObject<ChangeItem> *change in objectAvailable){
         [change valueChangedTo:newValue from:oldValue];
     }
 
@@ -144,7 +148,6 @@
     [self.changeItems addObject:changeItem];
     // Apply the value change to make the value sync with current values
     [changeItem valueChangedTo:self.currentValue from:[NSNull null]];
-    typeof(self) __weak weakSelf = self;
     [changeItem attachToChannel:self];
 }
 

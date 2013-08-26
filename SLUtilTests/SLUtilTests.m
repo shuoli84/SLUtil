@@ -1,6 +1,7 @@
 #import "Kiwi.h"
 #import "RecurseFense.h"
 #import "ChangeChannel.h"
+#import "NSObject+BlockObservation.h"
 
 SPEC_BEGIN(RecurseFenseSpec)
 
@@ -89,9 +90,15 @@ SPEC_BEGIN(ChangeChannelSpec)
                 }];
 
                 [changeChannel appendChangeItem:view4Change];
+                [view3 addObserverForKeyPath:@"frame" identifier:@"check" options:NSKeyValueObservingOptionNew task:^(id obj, NSDictionary *change) {
+                    NSLog(@"SHould only see this once");
+                }];
                 view3.frame = CGRectMake(3,5,1000,900);
                 [[theValue(view4.frame.origin.x) should] equal:theValue(6)];
                 [[theValue(view4.frame.size.width) should] equal:theValue(2000)];
+
+                [view3 removeObserversWithIdentifier:@"check"];
+
 
                 view4.frame = CGRectMake(4, 4, 4, 4);
                 [[theValue(view3.frame.origin.x) should] equal:theValue(2)];

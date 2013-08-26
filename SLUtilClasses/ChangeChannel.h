@@ -11,6 +11,7 @@
 @class ChangeChannel;
 
 typedef void (^ChangeBlock)(id newValue, id oldValue);
+typedef void (^ChangeWithSenderBlock)(id newValue, id oldValue, id sender);
 typedef id (^ValueConvertBlock)(id value);
 
 @interface ValueConverter : NSObject
@@ -60,10 +61,10 @@ typedef id (^ValueConvertBlock)(id value);
 
 @property (nonatomic, strong) id currentValue;
 @property (nonatomic, strong) NSMutableArray *changeItems;
-@property (nonatomic, copy) ChangeBlock changeSendBlock;
+@property (nonatomic, copy) ChangeWithSenderBlock changeSendBlock;
 -(id)initWithChangeItems:(NSArray*)changeItems value:(id)value;
 
--(void)setNewValue:(id)newValue fromOldValue:(id)oldValue;
+-(void)setNewValue:(id)newValue fromOldValue:(id)oldValue source:(id)sourceObject;
 
 -(void)appendChangeItem:(id<ChangeItem>)changeItem;
 -(void)removeChangeItem:(id<ChangeItem>)changeItem;
